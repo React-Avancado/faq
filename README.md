@@ -4,6 +4,8 @@
 
 Abaixo segue o índice com todas as coisas, sinta-se a vontade para adicionar novas dúvidas/soluções. E caso não encontre direto no índice, tenta dar um `search` primeiro, as vezes não está no título, mas está dentro do documento, um `ctrl+F` sempre ajuda =)
 
+Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossário](https://github.com/React-Avancado/links-estudo/blob/master/glossary.md)
+
 ## Índice
 
 - [FAQ](#faq)
