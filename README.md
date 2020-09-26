@@ -48,6 +48,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [O termo 'touch' não é reconhecido como nome de cmdlet, função, arquivo de script](#o-termo-touch-não-é-reconhecido-como-nome-de-cmdlet-função-arquivo-de-script)
   - [System limit for number of file watchers reached, watch](#system-limit-for-number-of-file-watchers-reached-watch)
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
+  - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
 
 
 ---
@@ -514,3 +515,11 @@ Se você lembrar o email cadastrado, recomendo utilizar a opção "Esqueceu sua 
 Se você não lembrar o email, você pode deletar a tabela `strapi_administrators` e a próxima vez que tenta acessar o sistema, ele vai pedir para criar o usuário.
 
 Para deletar, basta rodar `truncate strapi_administrators;` dentro do Postgres no seu banco.
+
+---
+
+### As fotos dos autores não aparecem na Landing Page
+
+Verifique se na sua API do Strapi, a `photo` está com a opção de `Single Media` definida. Precisa estar conforme [esta linha](https://github.com/React-Avancado/landing-page-api/blob/master/api/author/models/author.settings.json#L13).
+
+
