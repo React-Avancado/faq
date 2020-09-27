@@ -34,6 +34,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Property 'propriedade_aqui' does not exist on type 'propriedade'](#property-propriedade_aqui-does-not-exist-on-type-propriedade)
   - [Não tem mais opção de selecionar template ao rodar create-next-app](#não-tem-mais-opção-de-selecionar-template-ao-rodar-create-next-app)
   - ['Error: You have both a "main" and a "config"' ao rodar o Storybook](#error-you-have-both-a-main-and-a-config-ao-rodar-o-storybook)
+  - [Como fazer o Storybook funcionar com caminho absoluto](#como-fazer-o-storybook-funcionar-com-caminho-absoluto)
   - [You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.](#you-are-currently-running-a-version-of-typescript-which-is-not-officially-supported-by-typescript-eslinttypescript-estree)
   - [Connection test failed: autenticacao do tipo password falhou para usuario "strapi"](#connection-test-failed-autenticacao-do-tipo-password-falhou-para-usuario-strapi)
   - [rating must be one of the following values: FREE, pegi3, pegi7, pegi12, pegi16, pegi18 | GoG não tá retornando os ratings](#rating-must-be-one-of-the-following-values-free-pegi3-pegi7-pegi12-pegi16-pegi18--gog-não-tá-retornando-os-ratings)
@@ -377,6 +378,21 @@ npx create-next-app myapp -e <url-do-boilerplate>
 Depois da atualização do Storybook 6, a configuração ficou mais simplificada, agora podemos ter somente a `main.js` e o `preview.js` caso queira adicionar algum wrapper.
 
 Você pode seguir o padrão [do boilerplate oficial](https://github.com/React-Avancado/boilerplate/tree/master/.storybook)
+
+---
+
+### Como fazer o Storybook funcionar com caminho absoluto
+
+Para importar o componente direto como `components/Logo` ao invés de `../src/components/Logo` basta editar o seu arquivo `main.js` de configuração do Storybook para incluir as seguintes linhas:
+
+```js
+webpackFinal: (config) => {
+  config.resolve.modules.push(`${process.cwd()}/src`)
+  return config
+}
+```
+
+Você pode ver o [arquivo completo aqui](https://github.com/React-Avancado/boilerplate/blob/master/.storybook/main.js)
 
 ---
 
