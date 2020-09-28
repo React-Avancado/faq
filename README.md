@@ -486,19 +486,16 @@ Para reiniciar o servidor, basta pressionar `ctrl+shift+P` (cmd no Mac) e buscar
 
 ### toHaveStyle tá dando erro nos testes
 
-Verifique a versão do seu `styled-components`, é muito possível que ela esteja na versão `5.2` e por isso está quebrando.
+Esse é um [bug já reportado](https://github.com/styled-components/styled-components/issues/3262) que veio em algumas otimização da versão `5.2.x`. Para corrigir esse problema, a solução `atual` está sendo mapear no Jest o uso do bundle de browser que o Styled Components cria. Para isso, edite seu arquivo `jest.config.js` para incluir as seguintes linhas:
 
-Esse é um [bug já reportado](https://github.com/styled-components/styled-components/issues/3262) na lib. Existem algumas soluções possíveis já, mas minha recomendação é permanecer na versão `5.1.1`, ao menos por enquanto.
-
-Faça o seguinte procedimento:
-
-```sh
-# remova o styled-components do projeto
-yarn remove styled-components
-
-# instale a versão fixa
-yarn add styled-components@5.1.1
+```js
+moduleNameMapper: {
+  '^styled-components':
+  '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js'
+}
 ```
+
+Você pode ver o [arquivo completo aqui](https://github.com/React-Avancado/boilerplate/blob/master/jest.config.js)
 
 ---
 
