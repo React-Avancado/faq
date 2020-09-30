@@ -50,7 +50,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [System limit for number of file watchers reached, watch](#system-limit-for-number-of-file-watchers-reached-watch)
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
-
+  - [Error: Validation error - slug must match the following](#error-validation-error-slug-must-match-the-following) 
 
 ---
 
@@ -535,4 +535,15 @@ Para deletar, basta rodar `truncate strapi_administrators;` dentro do Postgres n
 
 Verifique se na sua API do Strapi, a `photo` está com a opção de `Single Media` definida. Precisa estar conforme [esta linha](https://github.com/React-Avancado/landing-page-api/blob/master/api/author/models/author.settings.json#L13).
 
+---
+
+### Error: Validation error - slug must match the following
+
+Se você estiver populando o nosso banco de dados do Strapi e tiver esse erro, é possível que o slug de algum jogo esteja fora dos padrões que o Strapi definiu. Para normalizar tudo, basta editar para que o método de `slugify` remova qualquer símbolo estranho:
+
+```js
+slug: slugify(name, { strict: true, lower: true }),
+```
+
+Você pode ver o arquivo inteiro e sua linha modificada, [bem aqui](https://github.com/Won-Games/api/blob/master/api/game/services/game.js#L59)
 
