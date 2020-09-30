@@ -50,7 +50,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [System limit for number of file watchers reached, watch](#system-limit-for-number-of-file-watchers-reached-watch)
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
-  - [Error: Validation error - slug must match the following](#error-validation-error-slug-must-match-the-following) 
+  - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following) 
 
 ---
 
