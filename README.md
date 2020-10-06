@@ -23,6 +23,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Cannot find module 'core-js/modules/es.array.iterator'](#cannot-find-module-core-jsmodulesesarrayiterator)
   - [Can't resolve `@ckeditor/ckeditor5-build-classic`](#cant-resolve-ckeditorckeditor5-build-classic)
   - [Como rodar o dump no Docker? O comando `psql` não existe](#como-rodar-o-dump-no-docker-o-comando-psql-não-existe)
+  - [Como exportar a base localmente com o Docker?](#como-exportar-a-base-localmente-com-o-docker)
   - [pg_restore: error: could not read from input file: end of file](#pg_restore-error-could-not-read-from-input-file-end-of-file)
   - [Server wasn't able to start properly.](#server-wasnt-able-to-start-properly)
   - [Como usar o Docker no Windows?](#como-usar-o-docker-no-windows)
@@ -212,6 +213,16 @@ Existem várias formas de rodar o comando, o mais simples e indicado é:
 
 ```sh
 cat strapi.sql | docker exec -i NOME_DO_SEU_CONTAINER psql -U SEU_USUARIO -d SUA_DATABASE
+```
+
+---
+
+### Como exportar a base localmente com o Docker
+
+Esse comando irá exportar a base de dados para a sua máquina com o seguinte formato: `DUMP_DIA-MES-ANO_HORA_MINUTO_SEGUNDO`, por exemplo, DUMP_06-10-2020_09_27_44.
+
+```sh
+docker exec -i NOME_DO_SEU_CONTAINER pg_dump --username SEU_USUARIO --password SUA_DATABASE > DUMP*`date +%d-%m-%Y"_"%H_%M_%S`.sql
 ```
 
 ---
