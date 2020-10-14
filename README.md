@@ -52,7 +52,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
   - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following) 
-  - [Qual é o link do Figma da Won Games?]()
+  - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
 
 ---
 
