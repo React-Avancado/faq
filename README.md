@@ -52,6 +52,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
   - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following) 
+  - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
 
 ---
 
@@ -558,3 +559,18 @@ slug: slugify(name, { strict: true, lower: true }),
 
 Você pode ver o arquivo inteiro e sua linha modificada, [bem aqui](https://github.com/Won-Games/api/blob/master/api/game/services/game.js#L59)
 
+---
+
+### Qual é o link do Figma da Won Games?
+
+Você pode acessar o link do Figma [aqui](https://www.figma.com/file/8KXr60mZZqL6kqecp1ZeeP/Won-Games-English?node-id=139%3A0). 
+
+Lá você encontrará: 
+- Protótipos para Mobile e Desktop
+- Styleguide do projeto
+- Inspirações usadas para construção
+- Branding da Won Games
+- Wireframes
+- Imagens
+- Icones
+- Landing Page de venda do curso
