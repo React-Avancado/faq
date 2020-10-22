@@ -23,7 +23,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Cannot find module 'core-js/modules/es.array.iterator'](#cannot-find-module-core-jsmodulesesarrayiterator)
   - [Can't resolve `@ckeditor/ckeditor5-build-classic`](#cant-resolve-ckeditorckeditor5-build-classic)
   - [Como rodar o dump no Docker? O comando `psql` não existe](#como-rodar-o-dump-no-docker-o-comando-psql-não-existe)
-  - [Como exportar a base localmente com o Docker?](#como-exportar-a-base-localmente-com-o-docker)
+  - [Como exportar a base localmente com o Docker](#como-exportar-a-base-localmente-com-o-docker)
   - [pg_restore: error: could not read from input file: end of file](#pg_restore-error-could-not-read-from-input-file-end-of-file)
   - [Server wasn't able to start properly.](#server-wasnt-able-to-start-properly)
   - [Como usar o Docker no Windows?](#como-usar-o-docker-no-windows)
@@ -51,7 +51,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [System limit for number of file watchers reached, watch](#system-limit-for-number-of-file-watchers-reached-watch)
   - [Esqueci meu usuário/senha de Admin do Strapi, como faço?](#esqueci-meu-usuáriosenha-de-admin-do-strapi-como-faço)
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
-  - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following) 
+  - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following)
   - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
 
 ---
@@ -563,9 +563,9 @@ Você pode ver o arquivo inteiro e sua linha modificada, [bem aqui](https://gith
 
 ### Qual é o link do Figma da Won Games?
 
-Você pode acessar o link do Figma [aqui](https://www.figma.com/file/8KXr60mZZqL6kqecp1ZeeP/Won-Games-English?node-id=139%3A0). 
+Você pode acessar o link do Figma [aqui](https://www.figma.com/file/8KXr60mZZqL6kqecp1ZeeP/Won-Games-English?node-id=139%3A0).
 
-Lá você encontrará: 
+Lá você encontrará:
 - Protótipos para Mobile e Desktop
 - Styleguide do projeto
 - Inspirações usadas para construção
