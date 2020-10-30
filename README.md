@@ -509,6 +509,8 @@ moduleNameMapper: {
 
 Você pode ver o [arquivo completo aqui](https://github.com/React-Avancado/boilerplate/blob/master/jest.config.js)
 
+**Update**: o pessoal do `styled-components` corrigiu esse bug na versão `5.2.1`, então basta atualizar a versão. Você pode ver as correções feitas no nosso boilerplate [nesse commit](https://github.com/React-Avancado/boilerplate/commit/33aa95775ba0145e4bffc32b1562326b07b4c811)
+
 ---
 
 ### BABEL ssr is not a valid Plugin property
