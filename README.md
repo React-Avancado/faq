@@ -22,6 +22,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [sudo: service: command not found](#sudo-service-command-not-found)
   - [Cannot find module 'core-js/modules/es.array.iterator'](#cannot-find-module-core-jsmodulesesarrayiterator)
   - [Can't resolve `@ckeditor/ckeditor5-build-classic`](#cant-resolve-ckeditorckeditor5-build-classic)
+  - [Something went wrong ao instalar ckdeditor](#something-went-wrong-ao-instalar-ckeditor)
   - [Como rodar o dump no Docker? O comando `psql` não existe](#como-rodar-o-dump-no-docker-o-comando-psql-não-existe)
   - [Como exportar a base localmente com o Docker](#como-exportar-a-base-localmente-com-o-docker)
   - [pg_restore: error: could not read from input file: end of file](#pg_restore-error-could-not-read-from-input-file-end-of-file)
@@ -205,6 +206,19 @@ npm install -D core-js
 ### Can't resolve `@ckeditor/ckeditor5-build-classic`
 
 Se você tiver ao tentar subir o projeto do Strapi no Heroku, basta adicionar um método de `postinstall` no projeto para que ele instale as dependências do plugin, segue [o commit de como fazer](https://github.com/React-Avancado/landing-page-api/pull/1/commits/66029a0ebf42f1efb63182f7ccd824fdd83ef56a)
+
+---
+
+### Something went wrong ao instalar ckdeditor
+
+Se você teve problemas no Strapi depois de instalar o Ckeditor, muito provavelmente é por causa da versão. Na versão nova `23.x`, eles fizeram algumas mudanças que causaram breaking changes com o nosso código. Eu estou investigando o problema, mas para que você tenha tudo funcionando normalmente, faça os seguintes passos:
+
+- Mudar as versões em `plugins/wysiwyg` para as [versões descritas no curso](https://github.com/React-Avancado/landing-page-api/blob/master/plugins/wysiwyg/package.json#L11-L12)
+- Rodar o `yarn` dentro da pasta `plugins/wysiwyg` para refazer o `yarn.lock` com as dependências corretas
+- Rodar `yarn build --clean` dentro da raiz do projeto para refazer o build
+- Rodar `yarn start` ou `yarn develop` para iniciar o projeto
+
+Caso continue quebrando, tente remover o `node_modules` tanto da pasta raiz do projeto quanto de plugins e reinstale novamente.
 
 ---
 
