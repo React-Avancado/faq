@@ -22,7 +22,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [sudo: service: command not found](#sudo-service-command-not-found)
   - [Cannot find module 'core-js/modules/es.array.iterator'](#cannot-find-module-core-jsmodulesesarrayiterator)
   - [Can't resolve `@ckeditor/ckeditor5-build-classic`](#cant-resolve-ckeditorckeditor5-build-classic)
-  - [Something went wrong ao instalar ckdeditor](#something-went-wrong-ao-instalar-ckeditor)
+  - [Something went wrong ao instalar ckdeditor](#something-went-wrong-ao-instalar-ckdeditor)
   - [Como rodar o dump no Docker? O comando `psql` não existe](#como-rodar-o-dump-no-docker-o-comando-psql-não-existe)
   - [Como exportar a base localmente com o Docker](#como-exportar-a-base-localmente-com-o-docker)
   - [pg_restore: error: could not read from input file: end of file](#pg_restore-error-could-not-read-from-input-file-end-of-file)
