@@ -37,7 +37,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Não tem mais opção de selecionar template ao rodar create-next-app](#não-tem-mais-opção-de-selecionar-template-ao-rodar-create-next-app)
   - ['Error: You have both a "main" and a "config"' ao rodar o Storybook](#error-you-have-both-a-main-and-a-config-ao-rodar-o-storybook)
   - [Como fazer o Storybook funcionar com caminho absoluto](#como-fazer-o-storybook-funcionar-com-caminho-absoluto)
-  - [Invalid hook call ao abrir a página do storybook](#invalid_hook_call-ao-abrir-a-pagina-do-storybook)
+  - [Invalid hook call ao abrir a página do storybook](#invalid-hook-call-ao-abrir-a-pagina-do-storybook)
   - [You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.](#you-are-currently-running-a-version-of-typescript-which-is-not-officially-supported-by-typescript-eslinttypescript-estree)
   - [Connection test failed: autenticacao do tipo password falhou para usuario "strapi"](#connection-test-failed-autenticacao-do-tipo-password-falhou-para-usuario-strapi)
   - [rating must be one of the following values: FREE, pegi3, pegi7, pegi12, pegi16, pegi18 | GoG não tá retornando os ratings](#rating-must-be-one-of-the-following-values-free-pegi3-pegi7-pegi12-pegi16-pegi18--gog-não-tá-retornando-os-ratings)
