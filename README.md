@@ -466,7 +466,7 @@ Verifique o seu arquivo de [social-links](https://github.com/React-Avancado/land
 
 Exemplo, se o erro for no `Dribble`, é porque ele precisa de 3 `b`, o certo é `Dribbble`. O mesmo deve ser tratado para `Github` sem `H` maiusculo e por aí vai.
 
-Outra situação possivél é casso tenha feito o upload dos dados no Strapi do `dump` via linha de commando `sql` é possível que o select não tenha fixado e ficou `Choose here`. Só precisa colocar o select correto e pronto.
+Outra situação possivél é caso tenha feito o upload dos dados no Strapi do `dump` via linha de commando `sql` é possível que o select não tenha fixado e ficou `Choose here`. Só precisa colocar o select correto e pronto.
 
 ---
 
