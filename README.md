@@ -55,6 +55,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [As fotos dos autores não aparecem na Landing Page](#as-fotos-dos-autores-não-aparecem-na-landing-page)
   - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following)
   - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
+  - [Warnings de 'multiple version of 'foo' found' quando executo yarn develop --watch-admin](#warning-multiple-version-of-foo-found-ao-executar-yarn-develop---watch-admin)
 
 ---
 
@@ -70,7 +71,7 @@ Todas as extensões que uso no curso podem ser baixadas [aqui](https://marketpla
 
 Caso não tenha, instale com `yarn add -D prettier`, reinicie o editor e tente novamente.
 
-2. Verifique se o teu VS Code está configurado para formatar ao salvar. Você precisa ter um arquivo *na raiz do projeto* como [.vscode/settings.json](https://github.com/React-Avancado/boilerplate/blob/master/.vscode/settings.json), segue abaixo o código:
+2. Verifique se o teu VS Code está configurado para formatar ao salvar. Você precisa ter um arquivo _na raiz do projeto_ como [.vscode/settings.json](https://github.com/React-Avancado/boilerplate/blob/master/.vscode/settings.json), segue abaixo o código:
 
 ```json
 {
@@ -106,7 +107,6 @@ Se você tentar rodar o `eslint` diretamente pelo terminal e der esse erro, isso
 1. Instalar globalmente com `npm install -g eslint` ou `yarn global add eslint`.
 2. Rodar através do projeto com `yarn lint` (verifique se possui o comando no `package.json`) ou com `yarn eslint`.
 
-
 ---
 
 ### Warnings aparecendo ao rodar algum yarn add / npm install
@@ -116,7 +116,6 @@ Se você tentar rodar o `eslint` diretamente pelo terminal e der esse erro, isso
 Isso ocorre quando alguma dependência interna é depreciada ou modificada ou tem algum erro de segurança.
 
 Não precisa se preocupar que em 99% dos casos isso não chega a te afetar. Quem precisa verificar e mudar é a biblioteca em questão.
-
 
 ---
 
@@ -331,7 +330,6 @@ cross-env NODE_ENV=production yarn build
 
 Esse erro acontece quando você tenta rodar métodos do `jest-dom` e não o tem configurado. Para configurar, você precisa ter um arquivo [.jest/setup.ts](https://github.com/React-Avancado/boilerplate/blob/master/.jest/setup.ts#L1) e então chamar o setup na configuração do [jest.config.js](https://github.com/React-Avancado/boilerplate/blob/master/jest.config.js#L6).
 
-
 ---
 
 ### Cannot read property 'map' of undefined
@@ -340,16 +338,14 @@ Esse é um erro muito comum no JavaScript e muitas pessoas tem dificuldade, ent�
 
 O erro diz que não consegue usar `map` em `undefined`, isso significa que o array que você está tentando percorrer não existe. Pensemos no seguinte código:
 
-
 ```js
-
 const arr = [1, 2, 3];
 
 // aqui vai funcionar normal, afinal de contas o `arr` existe e é de fato um array
-arr.map(n => console.log(n))
+arr.map((n) => console.log(n));
 
 // aqui ele vai dizer exatamente "Cannot read property 'map' of undefined"
-arrayQueNaoExiste.map(n => console.log(n))
+arrayQueNaoExiste.map((n) => console.log(n));
 ```
 
 Nesses casos, você precisa verificar:
@@ -414,9 +410,9 @@ Para importar o componente direto como `components/Logo` ao invés de `../src/co
 
 ```js
 webpackFinal: (config) => {
-  config.resolve.modules.push(`${process.cwd()}/src`)
-  return config
-}
+  config.resolve.modules.push(`${process.cwd()}/src`);
+  return config;
+};
 ```
 
 Você pode ver o [arquivo completo aqui](https://github.com/React-Avancado/boilerplate/blob/master/.storybook/main.js)
@@ -498,7 +494,7 @@ A Cloudinary aparentemente tem alguns problemas em interpretar o SVG se ele esti
 Muito possivelmente o Jest não está reconhecendo o absolute path, basta editar seu `jest.config.js` para ter essa linha:
 
 ```js
-modulePaths: ['<rootDir>/src/']
+modulePaths: ["<rootDir>/src/"];
 ```
 
 Verifique sempre o [arquivo original no boilerplate](https://github.com/React-Avancado/boilerplate/blob/master/jest.config.js)
@@ -603,6 +599,7 @@ Você pode ver o arquivo inteiro e sua linha modificada, [bem aqui](https://gith
 Você pode acessar o link do Figma [aqui](https://www.figma.com/file/8KXr60mZZqL6kqecp1ZeeP/Won-Games-English?node-id=139%3A0).
 
 Lá você encontrará:
+
 - Protótipos para Mobile e Desktop
 - Styleguide do projeto
 - Inspirações usadas para construção
@@ -611,3 +608,30 @@ Lá você encontrará:
 - Imagens
 - Icones
 - Landing Page de venda do curso
+
+---
+
+### Warning: 'multiple version of 'foo' found' ao executar yarn develop --watch-admin
+
+Ao rodar o Strapi em modo development com a flag `--watch-admin` e se deparar com algum Warning como: `multiple version of 'foo' found`, ou até mesmo notar que o host `localhost:8000/admin` não está atualizado com suas modificações, ou ainda, estiver apresentando um loading infinito, é provável que que a porta `8000` já esteja executando alguma instância do Strapi em background e que não foi encerrada devidamente.
+
+Para verificar processos rodando na porta `8000` execute no terminal:
+
+```bash
+lsof -i 8000
+```
+
+Verifique se o output exibe alguma entrada semelhante a esta abaixo:
+
+```bash
+COMMAND     PID     USER   FD   TYPE    DEVICE   SIZE/OFF  NODE NAME
+node        3182    foo    cwd   IPV4   8,17     4096      TCP  localhost:8000(LISTEN)
+```
+
+Mate o(s) processo(s) que estiverem executando nessa porta. Exemplo:
+
+```bash
+kill -9 3182
+```
+
+Por fim, remova as pastas `.cache` e `build` do projeto, execute o comando `yarn build --clean` e execute novamente o comando `yarn develop --watch-admin`.
