@@ -618,7 +618,7 @@ Ao rodar o Strapi em modo development com a flag `--watch-admin` e se deparar co
 Para verificar processos rodando na porta `8000` execute no terminal:
 
 ```bash
-lsof -i 8000
+lsof -i :8000
 ```
 
 Verifique se o output exibe alguma entrada semelhante a esta abaixo:
