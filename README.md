@@ -56,6 +56,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Error: Validation error - slug must match the following](#error-validation-error---slug-must-match-the-following)
   - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
   - [Warnings de 'multiple version of 'foo' found' quando executo yarn develop --watch-admin](#warning-multiple-version-of-foo-found-ao-executar-yarn-develop---watch-admin)
+  - [jsx is not defined error](#jsx-is-not-defined-error)
 
 ---
 
@@ -637,3 +638,7 @@ kill -9 3182
 Por fim, remova as pastas `.cache` e `build` do projeto, execute o comando `yarn build --clean` e execute novamente o comando `yarn develop --watch-admin`.
 
 Ps.: se não funcionar, tente reiniciar o computador e fazer o processo, muitos passaram a funcionar após isso.
+
+### jsx is not defined error
+
+Esse erro aparentemente começou a ocorrer na versão 17 do React. Para corrigir de uma forma prática, é só seguir [como comentado nessa issue](https://github.com/storybookjs/storybook/issues/12952). Copie o arquivo `.babelrc` da raiz do projeto para dentro da pasta `.storybook` e rode o comando com `--no-dll` no final. Seja para o `build-storybook` como para o `yarn storybook`.
