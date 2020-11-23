@@ -635,3 +635,5 @@ kill -9 3182
 ```
 
 Por fim, remova as pastas `.cache` e `build` do projeto, execute o comando `yarn build --clean` e execute novamente o comando `yarn develop --watch-admin`.
+
+Ps.: se não funcionar, tente reiniciar o computador e fazer o processo, muitos passaram a funcionar após isso.
