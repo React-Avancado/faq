@@ -57,6 +57,7 @@ Para dúvidas sobre termos/ferramentas usados no curso, temos também o [Glossá
   - [Qual é o link do Figma da Won Games?](#qual-é-o-link-do-figma-da-won-games)
   - [Warnings de 'multiple version of 'foo' found' quando executo yarn develop --watch-admin](#warning-multiple-version-of-foo-found-ao-executar-yarn-develop---watch-admin)
   - [jsx is not defined error](#jsx-is-not-defined-error)
+  - [rating da GoG sempre vindo null](#rating-da-GoG-sempre-vindo-null)
 
 ---
 
@@ -642,3 +643,11 @@ Ps.: se não funcionar, tente reiniciar o computador e fazer o processo, muitos 
 ### jsx is not defined error
 
 Esse erro aparentemente começou a ocorrer na versão 17 do React. Para corrigir de uma forma prática, é só seguir [como comentado nessa issue](https://github.com/storybookjs/storybook/issues/12952). Copie o arquivo `.babelrc` da raiz do projeto para dentro da pasta `.storybook` e rode o comando com `--no-dll` no final. Seja para o `build-storybook` como para o `yarn storybook`.
+
+### rating da GoG sempre vindo null
+
+A GoG modificou novamente a forma deles trabalharem com o rating e agora, no primeiro loading, eles identificam sua região e somente na segunda vez que você olha a página que eles mostram o rating baseado na sua região. 
+
+Para que não tenhamos problemas nessa parte, basta definir para que o rating seja sempre por padrão `BR0` ou qualquer valor que você desejar, baseado no seu `enum` de rating. E aí o código do service ficará simplificado [da seguinte maneira](https://github.com/Won-Games/api/commit/f13fa2f3b463a90523574396867739a3cc2b00a6).
+
+A decisão de não pegar o valor é puramente para que não tenhamos necessidade de revisitar esse pedaço e pois o objetivo do curso não é ser um crawler 100% e sim só ter uma API com dados mais realistas. Sinta-se a vontade para criar uma solução se achar necessário.
